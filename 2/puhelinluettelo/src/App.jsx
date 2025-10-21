@@ -78,6 +78,7 @@ const App = () => {
   }
 
   useEffect(hook, []);
+  console.log(persons);
 
   const handleNameChange = (event) => {
     setNewName(event.target.value);
