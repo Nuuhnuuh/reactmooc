@@ -11,6 +11,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
+app.use(express.static('dist'))
 
 let persons = [
     {
@@ -24,7 +25,7 @@ let persons = [
         number: "040-1231829"
     },
     {
-        id: "1",
+        id: "3",
         name: "Isaac Newton",
         number: "040-12342234"
     }
@@ -39,6 +40,7 @@ app.get('/info', (request, response) => {
 
 app.get('/api/persons', (request, response) => {
     response.json(persons)
+    response.end();
 })
 
 app.get('/api/persons/:id', (request, response) => {
