@@ -5,8 +5,6 @@
 const express = require('express')
 const fs = require('fs')
 const path = require('path')
-
-var morgan = require('morgan')
 const cors = require('cors')
 
 const app = express()
