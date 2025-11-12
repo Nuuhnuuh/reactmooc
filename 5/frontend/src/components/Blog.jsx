@@ -1,7 +1,7 @@
 
 import Toggleable from '../components/Toggleable'
 
-const Blog = ({ blog, handleLike, handleRemove }) => {
+const Blog = ({ blog, handleLike, handleRemove, showUserActions }) => {
   const blogStyle = {
     paddingTop: 10,
     paddingLeft: 2,
@@ -10,19 +10,24 @@ const Blog = ({ blog, handleLike, handleRemove }) => {
     marginBottom: 5
   }
 
-  return (
+  const removeButton = () => { return(
+    <button onClick={handleRemove}>delete</button> ) }
 
+  return (
+    <>
+    <div>
+    {blog.title} {blog.author}
+    </div>
     <Toggleable labelVisible='view' labelHidden='hide'>
     <div style={blogStyle}>
-      <div>
-        {blog.title} {blog.author}
-      </div>
-        {blog.user.username}
-        {blog.likes} likes
+      <p>{blog.user.username}</p>
+      <p>{blog.likes} likes </p>
+      <p>{blog.url}</p>
       <button onClick={handleLike}>like</button>
-      <button onClick={handleRemove}>delete</button>
+      { showUserActions ? removeButton() : '' }
     </div>
     </Toggleable>
+    </>
   )}
 
 export default Blog

@@ -14,18 +14,24 @@ const BlogForm = ({handleCreateBlog
     return (
         <form onSubmit={addBlog}>
             <div>
+            <label>
                 title
-                <input onChange={event => setBlog({...blog, title: event.target.value})}  />
+                <input placeholder='title' onChange={event => setBlog({...blog, title: event.target.value})}  />
+            </label>
             </div>
             <div>
+            <label>
             author
-                <input onChange={event => setBlog({...blog, author: event.target.value})}  />
+                <input placeholder='author' onChange={event => setBlog({...blog, author: event.target.value})}  />
+                </label>
             </div>
             <div>
+            <label>
             url
-                <input onChange={event => setBlog({...blog, url: event.target.value})}  />
+                <input placeholder='url' onChange={event => setBlog({...blog, url: event.target.value})}  />
+            </label>
             </div>
-            <input type="submit" />
+            <input id='blog-submit-btn' type="submit" />
         </form>
     )
 }
