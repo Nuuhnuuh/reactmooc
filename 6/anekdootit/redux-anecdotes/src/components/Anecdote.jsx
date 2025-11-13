@@ -1,6 +1,8 @@
 
-const Anecdote = ({handleVote, content, votes}) => {
+import { useDispatch }  from 'react-redux'
+import { voteAnecdote } from '../reducers/anecdoteReducer'
 
+const Anecdote = ({handleVote, content, votes}) => {
     return (
         <>
         <div>{content}</div>
